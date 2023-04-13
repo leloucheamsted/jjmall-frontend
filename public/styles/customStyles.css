@@ -1,0 +1,3 @@
+.searchNavbar input:focus {
+    outline: none !important;
+}
