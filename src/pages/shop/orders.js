@@ -12,7 +12,7 @@ import ShopServices from '@services/ShopServices';
 import Loading from '@component/preloader/Loading';
 import {UserContext} from '@context/UserContext';
 
-import OrderHistory from '@component/order/OrderHistory';
+import OrderHistory from '@component/order/user/OrderHistory';
 import {SidebarContext} from '@context/SidebarContext';
 import {FiDelete, FiEdit3, FiPlus, FiTrash2} from 'react-icons/fi';
 import UpdateShopModal from '@component/modal/UpdateShopModal';

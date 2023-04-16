@@ -9,7 +9,7 @@ import Dashboard from '@pages/user/dashboard';
 import OrderServices from '@services/OrderServices';
 import Loading from '@component/preloader/Loading';
 import { UserContext } from '@context/UserContext';
-import OrderHistory from '@component/order/OrderHistory';
+import OrderHistory from '@component/order/user/OrderHistory';
 import { SidebarContext } from '@context/SidebarContext';
 
 import dayjs from "dayjs";

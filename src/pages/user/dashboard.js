@@ -18,6 +18,7 @@ import RecentOrder from '@pages/user/recent-order';
 import { SidebarContext } from '@context/SidebarContext';
 import Loading from '@component/preloader/Loading';
 import { useLogout } from '@hooks/useLogout';
+import VendorDashboard from '@component/order/vendor/vendor_dashboard';
 // import { signOut, useSession } from "next-auth/react";
 
 const Dashboard = ({ title, description, children }) => {
@@ -131,159 +132,10 @@ const Dashboard = ({ title, description, children }) => {
                 )}
                 {children}
               </div>
-              <div className=" w-full space-y-5  lg:mt-0 px-4 sm:px-5 lg:px-8 rounded-md overflow-hidden">
-                <h2 className='text-[#183D1D] text-[24px]'>Today’s summary</h2>
-                {/* Cards */}
-                <div className='flex flex-wrap justify-between'>
-                  <div className='rounded-[5px] basis-1/2 md:basis-auto bg-white p-5 '>
-                    <h3 className='text-[24px] font-bold text-black'>05</h3>
-                    <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                  </div>
-                  <div className='rounded-[5px] basis-1/2 md:basis-auto bg-white p-5 '>
-                    <h3 className='text-[24px] font-bold text-black'>05</h3>
-                    <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                  </div>
-                  <div className='rounded-[5px] basis-1/2 md:basis-auto bg-white p-5 '>
-                    <h3 className='text-[24px] font-bold text-black'>05</h3>
-                    <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                  </div>
-                  <div className='rounded-[5px] basis-1/2 md:basis-auto bg-white p-5 '>
-                    <h3 className='text-[24px] font-bold text-black'>05</h3>
-                    <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                  </div>
-                </div>
+              {userInfo?.user.role.type === "vendor" ? (
+              <VendorDashboard/>
+              ) : null}
 
-                {/* New Orders */}
-                <div className='rounded-[5px]  bg-white p-2 '>
-                  <h3 className='text-[#738075] font-bold text-[18px]'>New orders</h3>
-                  <div className='flex flex-wrap justify-between'>
-                    <div className='basis-auto md:basis-1/2  py-2 flex justify-between items-center '>
-                      <div className='flex space-x-3  justify-start items-center'>
-                        <div className='h-[95px] w-[95px] bg-black flex justify-center items-center'>1</div>
-                        <div className='space-y-4'>
-                          <h3 className='text-[#183D1D] text-[15px] font-bold'>Medium macabo (15)</h3>
-                          <h6 className='text-[#8E9990] text-[12px]'>#order3254</h6>
-                        </div>
-                      </div>
-                      <div className='flex justify-between px-3 space-x-5'>
-                        <div className='h-[40px] w-[40px] bg-[#FCEAEA] rounded-[15px] flex justify-center items-center'>1</div>
-                        <div className='h-[40px] w-[40px] bg-[#eaf7ee] rounded-[15px] flex justify-center items-center'>2</div>
-                      </div>
-                    </div>
-                    <div className='basis-auto md:basis-1/2 py-2 flex justify-between items-center '>
-                      <div className='flex space-x-3  justify-start items-center'>
-                        <div className='h-[95px] w-[95px] bg-black flex justify-center items-center'>1</div>
-                        <div className='space-y-4'>
-                          <h3 className='text-[#183D1D] text-[15px] font-bold'>Medium macabo (15)</h3>
-                          <h6 className='text-[#8E9990] text-[12px]'>#order3254</h6>
-                        </div>
-                      </div>
-                      <div className='flex justify-between px-3 space-x-5'>
-                        <div className='h-[40px] w-[40px] bg-[#FCEAEA] rounded-[15px] flex justify-center items-center'>1</div>
-                        <div className='h-[40px] w-[40px] bg-[#eaf7ee] rounded-[15px] flex justify-center items-center'>2</div>
-                      </div>
-                    </div>
-                    <div className='basis-auto md:basis-1/2 py-2 flex justify-between items-center '>
-                      <div className='flex space-x-3  justify-start items-center'>
-                        <div className='h-[95px] w-[95px] bg-black flex justify-center items-center'>1</div>
-                        <div className='space-y-4'>
-                          <h3 className='text-[#183D1D] text-[15px] font-bold'>Medium macabo (15)</h3>
-                          <h6 className='text-[#8E9990] text-[12px]'>#order3254</h6>
-                        </div>
-                      </div>
-                      <div className='flex justify-between px-3 space-x-5'>
-                        <div className='h-[40px] w-[40px] bg-[#FCEAEA] rounded-[15px] flex justify-center items-center'>1</div>
-                        <div className='h-[40px] w-[40px] bg-[#eaf7ee] rounded-[15px] flex justify-center items-center'>2</div>
-                      </div>
-                    </div>
-                    <div className='basis-auto md:basis-1/2 py-2 flex justify-between items-center '>
-                      <div className='flex space-x-3  justify-start items-center'>
-                        <div className='h-[95px] w-[95px] bg-black flex justify-center items-center'>1</div>
-                        <div className='space-y-4'>
-                          <h3 className='text-[#183D1D] text-[15px] font-bold'>Medium macabo (15)</h3>
-                          <h6 className='text-[#8E9990] text-[12px]'>#order3254</h6>
-                        </div>
-                      </div>
-                      <div className='flex justify-between px-3 space-x-5'>
-                        <div className='h-[40px] w-[40px] bg-[#FCEAEA] rounded-[15px] flex justify-center items-center'>1</div>
-                        <div className='h-[40px] w-[40px] bg-[#eaf7ee] rounded-[15px] flex justify-center items-center'>2</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Sales summary */}
-                <div className='rounded-[5px]  bg-white p-2 '>
-                  <h3 className='text-[#738075] font-bold text-[18px]'>Sales summary</h3>
-                  <div className='block md:flex mt-4 md:space-x-3 space-y-3 md:space-y-0 justify-between'>
-                    <div className='basis-1/2  space-y-3 '>
-                      <div className='flex justify-between items-center'>
-                        <div className=''>
-                          <h3 className='text-[24px] text-[#183D1D] font-bold'>Total sales </h3>
-                          <h6 className='text-[#414D43] text-[18px]'>since Dec 27, 2022</h6>
-                        </div>
-                        <div className='-space-y-2 items-center'>
-                          <h3 className='text-[24px] pr-9 -mb-6 text-[#183D1D] font-bold'>520 000</h3>
-                          <h6 className='text-[#183D1D] -mt-[30px] flex justify-end items-end font-bold text-[18px]'>XAF</h6>
-                        </div>
-                      </div>
-                      <div className='space-y-2'>
-                        <div className='flex space-x-2 justify-between '>
-                          <div className='rounded-[2px] h-[122px] basis-1/2 shadow-md bg-[#008069] p-5 '>
-                            <h3 className='text-[24px] font-bold text-black'>05</h3>
-                            <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                          </div>
-                          <div className='rounded-[2px] h-[122px] basis-1/2  shadow-md bg-[#02512B] p-5 '>
-                            <h3 className='text-[24px] font-bold text-black'>05</h3>
-                            <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                          </div>
-                        </div>
-                        <div className='flex space-x-2 justify-between '>
-                          <div className='rounded-[2px] h-[122px] basis-1/2 shadow-md bg-[#2EBD56] p-5 '>
-                            <h3 className='text-[24px] font-bold text-black'>05</h3>
-                            <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                          </div>
-                          <div className='rounded-[2px] h-[122px] basis-1/2  shadow-md bg-[#288A36] p-5 '>
-                            <h3 className='text-[24px] font-bold text-black'>05</h3>
-                            <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='basis-1/2 bg-red-300 flex'>2</div>
-                  </div>
-                </div>
-                {/* Orders summary */}
-                <div className='rounded-[5px]  bg-white p-2 '>
-                  <h3 className='text-[#738075] font-bold text-[18px]'>Orders summary</h3>
-                  <div className='block md:flex mt-4 md:space-x-3 space-y-3 md:space-y-0 justify-between'>
-                    <div className='basis-1/2  space-y-3 '>
-                      <div className='flex justify-between items-center'>
-                        <div className=''>
-                          <h3 className='text-[24px] text-[#183D1D] font-bold'>Total sales </h3>
-                          <h6 className='text-[#414D43] text-[18px]'>since Dec 27, 2022</h6>
-                        </div>
-                        <div className='-space-y-2 items-center'>
-                          <h3 className='text-[24px]  text-[#183D1D] font-bold'>1500</h3>
-                        </div>
-                      </div>
-                      <div className='space-y-2'>
-                        <div className='flex space-x-2 justify-between '>
-                          <div className='rounded-[2px] h-[122px] basis-1/2 shadow-md bg-[#E9FEF0] p-5 '>
-                            <h3 className='text-[24px] font-bold text-black'>05</h3>
-                            <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                          </div>
-                          <div className='rounded-[2px] h-[122px] basis-1/2  shadow-md bg-[#F9ECEC] p-5 '>
-                            <h3 className='text-[24px] font-bold text-black'>05</h3>
-                            <h4 className='text-[#738075] text-[18px]'>Unconfirmed orders </h4>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className='basis-1/2 bg-red-300 flex'>2</div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </Layout>

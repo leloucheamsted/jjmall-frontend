@@ -5,7 +5,7 @@ import { SidebarContext } from '@context/SidebarContext';
 
 //internal import
 import Loading from '@component/preloader/Loading';
-import OrderHistory from '@component/order/OrderHistory';
+import OrderHistory from '@component/order/user/OrderHistory';
 
 const RecentOrder = ({ data, loading, error }) => {
   const { handleChangePage } = useContext(SidebarContext);

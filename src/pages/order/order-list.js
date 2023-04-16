@@ -1,4 +1,4 @@
-import OrderHistory from "@component/order/OrderHistory";
+import OrderHistory from "@component/order/user/OrderHistory";
 import { UserContext } from "@context/UserContext";
 import Layout from "@layout/Layout";
 import OrderServices from "@services/OrderServices";

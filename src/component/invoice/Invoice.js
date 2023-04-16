@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 //internal import
-import OrderTable from '@component/order/OrderTable';
+import OrderTable from '@component/order/user/OrderTable';
 
 const Invoice = ({ data, printRef }) => {
   return (

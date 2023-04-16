@@ -1,7 +1,7 @@
 import Layout from "@layout/Layout"
 import OrderServices from "@services/OrderServices"
 import { useEffect, useState } from "react"
-import FeedBack from "../../component/order/feedback"
+import FeedBack from "../../component/order/user/feedback"
 import qs from 'qs';
 import Loading from "@component/preloader/Loading"
 import dayjs from "dayjs"
